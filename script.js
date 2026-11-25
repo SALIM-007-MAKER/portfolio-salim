@@ -305,6 +305,8 @@
   (() => {
     const cv = document.getElementById('pf-particles');
     if (!cv || !cv.getContext) return;
+    // Pas de canvas plein écran sur mobile : économise mémoire et batterie.
+    if (matchMedia('(pointer: coarse), (max-width: 600px)').matches) { cv.width = cv.height = 0; return; }
     const ctx = cv.getContext('2d');
     const cs = getComputedStyle(root);
     const cols = ['--cr', '--br', '--vr'].map((k) => cs.getPropertyValue(k).trim().replace(/\s+/g, '') || '159,232,255');

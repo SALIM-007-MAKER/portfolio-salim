@@ -641,3 +641,42 @@ button.soc{border:0;font-family:inherit}
 /* SALIM_DEV reste visible sur tous les téléphones, sans attendre l'animation d'entrée */
 @media (max-width:600px){.nav .logo-txt{animation:none}.logo{min-width:0}.logo-txt{white-space:nowrap}}
 @media (max-width:359px){.nav .logo{gap:8px}.nav .logo-txt{font-size:15px;letter-spacing:.03em}.logo-cur{display:none}}
+
+/* ============ Version allégée pour téléphones et tablettes tactiles ============
+   Évite les effets très gourmands en mémoire, qui peuvent faire planter Safari sur iPhone. */
+@media (pointer:coarse),(max-width:600px){
+  /* effet de verre : remplacé par un fond opaque */
+  .pf *,.pf *::before,.pf *::after{backdrop-filter:none !important;-webkit-backdrop-filter:none !important}
+  .glass{background:linear-gradient(140deg,rgba(24,32,56,.9),rgba(11,15,28,.9))}
+  .nav,.nav.scrolled,.mmenu{background:rgba(8,11,22,.97)}
+  .modal{background:rgba(2,3,10,.92)}
+
+  /* halos de fond : dégradés fixes au lieu de grands flous animés */
+  .blob{filter:none !important;animation:none !important;opacity:.4}
+  .blob-a{background:radial-gradient(closest-side,var(--bl1),transparent)}
+  .blob-b{background:radial-gradient(closest-side,var(--bl2),transparent)}
+  .blob-c{background:radial-gradient(closest-side,var(--bl3),transparent)}
+  .noise,#pf-particles,.floor-wrap,.beam{display:none !important}
+
+  /* apparitions : fondu simple, sans flou ni 3D */
+  .fu,.ltr,.links .lk,.nav-right{filter:none !important}
+  .ltr{animation-name:liteIn !important;text-shadow:none}
+  .fu{animation-name:liteIn !important}
+  .cph{animation:liteIn .8s ease 2.6s both !important;transform:none}
+  .rv{transform:none !important}
+
+  /* plus de couches 3D */
+  .pf .holo,.pf .pcard,.pf .pvis,.pf .pbody,.pf .idcard,.pf .idcard-in,.pf .avatar,.pf .pgrid,.pf .fchip{transform-style:flat;perspective:none}
+  .pf .holo,.pf .pcard,.pf .pvis,.pf .pbody,.pf .idcard,.pf .fchip{transform:none}
+  .r1{animation:none !important;transform:rotateX(74deg)}
+  .r2{animation:none !important;transform:rotateY(70deg)}
+  .r3{display:none}
+
+  /* effets en boucle et mélanges d'images coûteux */
+  .ph-r,.ph-b,.ph-holo,.cph-scan,.cph-pop,.deco{display:none !important}
+  .idcard::before,.avatar::after,.cph-in,.cph-ring,.fchip,.logo-mark,.lm-ring,.nav::before,.nav-cta::after,.logo-txt::before,.logo-txt::after{animation:none !important}
+  .idcard::before{inset:0;opacity:.45}
+  .marquee{display:none}
+}
+@keyframes liteIn{from{opacity:0}to{opacity:1}}
+@media (pointer:coarse),(max-width:600px){.gridfx{display:none}.pf .rv{opacity:1;transform:none !important;transition:none}}
