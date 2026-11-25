@@ -526,7 +526,6 @@ select.inp{background-image:linear-gradient(45deg,transparent 50%,var(--c) 50%),
   .mvis .pyear{right:14px;top:auto;bottom:14px;left:14px}
   .id-meta{grid-template-columns:1fr}
 }
-@media (max-width:420px){.logo-txt-w,.logo-cur{display:none}}
 
 /* ---------- réduction des animations (classe posée dans <head>) ---------- */
 html.reduce-motion{scroll-behavior:auto}
@@ -628,7 +627,7 @@ button.soc{border:0;font-family:inherit}
   .pf .inp{font-size:16px}
   .foot-in .soc{flex:1 1 100%;justify-content:center}
 }
-@media (max-width:359px){.logo-txt-w{display:none}.id-meta,.counters{grid-template-columns:1fr}}
+@media (max-width:359px){.id-meta,.counters{grid-template-columns:1fr}}
 
 /* téléphone à l'horizontale */
 @media (max-height:500px) and (orientation:landscape){
@@ -639,3 +638,6 @@ button.soc{border:0;font-family:inherit}
 @media (pointer:coarse){.pf .inp{font-size:16px}}
 @media (max-width:600px){.cph-tag{display:none}}
 @media (max-width:359px){.av-tag{display:none}}
+/* SALIM_DEV reste visible sur tous les téléphones, sans attendre l'animation d'entrée */
+@media (max-width:600px){.nav .logo-txt{animation:none}.logo{min-width:0}.logo-txt{white-space:nowrap}}
+@media (max-width:359px){.nav .logo{gap:8px}.nav .logo-txt{font-size:15px;letter-spacing:.03em}.logo-cur{display:none}}
