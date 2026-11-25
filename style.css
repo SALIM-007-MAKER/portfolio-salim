@@ -355,12 +355,10 @@ select.inp option{background:#0a0d1e;color:#fff}
 .cph .ph-layer svg{width:82%;height:86%}
 .cph-scan{position:absolute;left:0;right:0;height:28%;background:linear-gradient(to bottom,transparent,rgba(var(--cr),.45),transparent);animation:scan 3.4s linear infinite;mix-blend-mode:screen}
 
-.cph-in .ph-layer.cph-img,.cph-pop{position:absolute;inset:auto;left:-11%;width:122%;top:-22%;height:122%}
-.cph-img img{width:100%;height:100%;object-fit:contain;object-position:50% 100%}
+.cph-in .ph-layer.cph-img{position:absolute;inset:0}
+.cph-img img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
 .cph-in .ph-base{color:inherit;filter:none}
-.cph-in .ph-base img{filter:contrast(1.05) saturate(1.05) drop-shadow(0 0 24px rgba(var(--cr),.35))}
-.cph-pop{z-index:3;pointer-events:none;clip-path:inset(0 0 56% 0);filter:drop-shadow(0 -4px 18px rgba(var(--cr),.45))}
-.cph-pop img{filter:contrast(1.05) saturate(1.05)}
+.cph-in .ph-base img{filter:contrast(1.03)}
 .cph-tag{position:absolute;left:50%;bottom:-40px;translate:-50% 0;z-index:4;font-size:11px;letter-spacing:.2em;color:var(--c);padding:6px 12px;border-radius:999px;background:rgba(3,6,16,.7);box-shadow:inset 0 0 0 1px rgba(var(--cr),.4),0 0 20px -4px rgba(var(--cr),.7);white-space:nowrap}
 .cph-tag::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:#3dffb0;box-shadow:0 0 8px #3dffb0;margin-right:8px;vertical-align:1px;animation:blink 1.6s ease-in-out infinite}
 
@@ -673,7 +671,7 @@ button.soc{border:0;font-family:inherit}
   .r3{display:none}
 
   /* effets en boucle et mélanges d'images coûteux */
-  .ph-r,.ph-b,.ph-holo,.cph-scan,.cph-pop,.deco{display:none !important}
+  .ph-r,.ph-b,.ph-holo,.cph-scan,.deco{display:none !important}
   /* étape 1 réactivée : contour de la photo, icône du logo, petites bulles */
   .cph-ring{filter:none}
   .idcard::before,.avatar::after,.cph-in,.nav::before,.nav-cta::after,.logo-txt::before,.logo-txt::after{animation:none !important}
@@ -682,3 +680,4 @@ button.soc{border:0;font-family:inherit}
 }
 @keyframes liteIn{from{opacity:0}to{opacity:1}}
 @media (pointer:coarse),(max-width:600px){.gridfx{display:none}.pf .rv{opacity:1;transform:none !important;transition:none}}
+@media (max-width:600px){.holo .fc2{top:62px;right:-34px}}
