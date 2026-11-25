@@ -1,0 +1,850 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <script>
+    // Choix du visiteur, sinon réglage système « réduire les animations ».
+    (function () {
+      var c = null;
+      try { c = localStorage.getItem('pf-motion'); } catch (e) {}
+      if (c ? c === 'off' : matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('reduce-motion');
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Salim Zabeirou — Développeur Web Junior Full-Stack</title>
+  <meta name="description" content="Portfolio de Salim Zabeirou, développeur Web Junior Full-Stack au Niger : EduNova, Tailora / AM Couture, solution de facturation JOEGOL. PHP, MySQL, React, Node.js.">
+  <meta name="author" content="Salim Zabeirou">
+  <meta name="theme-color" content="#04060b">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Salim Zabeirou — Développeur Web Junior Full-Stack">
+  <meta property="og:description" content="Portfolio de Salim Zabeirou, développeur Web Junior Full-Stack au Niger : EduNova, Tailora / AM Couture, solution de facturation JOEGOL. PHP, MySQL, React, Node.js.">
+  <!-- À la mise en ligne : remplacer par une URL absolue et ajouter og:url -->
+  <meta property="og:image" content="assets/salim.webp">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Salim Zabeirou","jobTitle":"Développeur Web Junior Full-Stack","address":{"@type":"PostalAddress","addressCountry":"NE"},"sameAs":["https://github.com/SALIM-007-MAKER"]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <noscript><style>.boot{display:none}.rv,.rv .st{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+<div class="pf th-glacier" id="pf-root">
+  <a class="skip" href="#contenu">Aller au contenu</a>
+
+  <!-- animated background -->
+  <div class="bg-fx" aria-hidden="true">
+    <div class="blob blob-a"></div>
+    <div class="blob blob-b"></div>
+    <div class="blob blob-c"></div>
+    <div class="gridfx"></div>
+    <div class="noise"></div>
+  </div>
+  <canvas id="pf-particles" aria-hidden="true"></canvas>
+
+  <!-- boot intro -->
+  <div class="boot" aria-hidden="true">
+    <div class="boot-box mono">
+      <div class="boot-logo disp grad">SZ</div>
+      <div class="boot-line bl1">&gt; initialisation du système <b>[OK]</b></div>
+      <div class="boot-line bl2">&gt; chargement des modules holographiques <b>[OK]</b></div>
+      <div class="boot-line bl3">&gt; synchronisation des particules <b>[OK]</b></div>
+      <div class="boot-line bl4">&gt; bienvenue, visiteur_</div>
+      <div class="boot-bar"><i></i></div>
+    </div>
+  </div>
+
+  <div class="prog" aria-hidden="true"></div>
+
+  <!-- nav -->
+  <header id="pf-nav" class="nav glass">
+    <a href="#accueil" class="logo disp" aria-label="Retour à l'accueil">
+      <span class="logo-mark mono"><span class="lm-ring" aria-hidden="true"></span><span class="lm-txt">SZ</span></span>
+      <span class="logo-txt-w"><span class="logo-txt" data-text="SALIM_DEV">SALIM_DEV</span></span><span class="logo-cur" aria-hidden="true"></span>
+    </a>
+    <nav class="links" aria-label="Sections">
+      <span class="nav-ind" id="pf-ind" aria-hidden="true"></span>
+
+        <a href="#accueil" class="lk on"><span class="roll-w"><span class="roll">Accueil</span></span></a>
+
+        <a href="#apropos" class="lk"><span class="roll-w"><span class="roll">À propos</span></span></a>
+
+        <a href="#competences" class="lk"><span class="roll-w"><span class="roll">Compétences</span></span></a>
+
+        <a href="#projets" class="lk"><span class="roll-w"><span class="roll">Projets</span></span></a>
+
+        <a href="#parcours" class="lk"><span class="roll-w"><span class="roll">Parcours</span></span></a>
+
+        <a href="#contact" class="lk"><span class="roll-w"><span class="roll">Contact</span></span></a>
+
+    </nav>
+    <div class="nav-right">
+      <span class="clock mono" aria-hidden="true"><span class="clock-dot"></span><span id="pf-clock">NIGER · --:--</span></span>
+      <a href="#contact" class="btn btn-p btn-sm nav-cta">Collaborons</a>
+      <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-mobile" data-act="toggleMenu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"></path></svg>
+      </button>
+    </div>
+    <span class="nav-line" aria-hidden="true"></span>
+  </header>
+  <div class="if-wrap off" data-if="menuOpen">
+    <nav class="mmenu glass" id="menu-mobile" aria-label="Menu mobile">
+
+        <a href="#accueil" class="lk on" data-act="closeMenu">Accueil</a>
+
+        <a href="#apropos" class="lk" data-act="closeMenu">À propos</a>
+
+        <a href="#competences" class="lk" data-act="closeMenu">Compétences</a>
+
+        <a href="#projets" class="lk" data-act="closeMenu">Projets</a>
+
+        <a href="#parcours" class="lk" data-act="closeMenu">Parcours</a>
+
+        <a href="#contact" class="lk" data-act="closeMenu">Contact</a>
+
+    </nav>
+  </div>
+
+  <main id="contenu" tabindex="-1">
+    <!-- ============ HERO ============ -->
+    <section id="accueil" class="hero">
+      <div class="floor-wrap" aria-hidden="true"><div class="floor"></div></div>
+      <div class="wrap">
+        <div class="hero-grid">
+          <div class="hero-txt">
+            <div class="kicker mono fu f1"><span class="live"></span>Génie Logiciel · Niger</div>
+            <h1 class="name disp" aria-label="Salim Zabeirou">
+
+                <span class="word" aria-hidden="true"><span class="ltr" style="animation-delay: 2.600s">S</span><span class="ltr" style="animation-delay: 2.655s">a</span><span class="ltr" style="animation-delay: 2.710s">l</span><span class="ltr" style="animation-delay: 2.765s">i</span><span class="ltr" style="animation-delay: 2.820s">m</span></span>
+
+                <span class="word" aria-hidden="true"><span class="ltr" style="animation-delay: 2.875s">Z</span><span class="ltr" style="animation-delay: 2.930s">a</span><span class="ltr" style="animation-delay: 2.985s">b</span><span class="ltr" style="animation-delay: 3.040s">e</span><span class="ltr" style="animation-delay: 3.095s">i</span><span class="ltr" style="animation-delay: 3.150s">r</span><span class="ltr" style="animation-delay: 3.205s">o</span><span class="ltr" style="animation-delay: 3.260s">u</span></span>
+
+            </h1>
+            <p class="role disp fu f6">Développeur <span class="grad">Web Junior Full-Stack</span></p>
+            <p class="spec mono fu f6" aria-hidden="true">&gt; <span id="pf-type">plateformes SaaS</span><span class="caret"></span></p>
+            <p class="lead fu f2">Je transforme des besoins réels en applications concrètes — plateformes SaaS, applications de gestion et digitalisation des entreprises, de l'interface jusqu'au backend et au déploiement.</p>
+            <div class="cta-row fu f3">
+              <a href="#projets" class="btn btn-p">Voir mes projets
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+              </a>
+              <a href="#contact" class="btn btn-g">Me contacter</a>
+              <a class="btn btn-g" data-cv hidden download>Télécharger mon CV <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"></path></svg></a>
+            </div>
+            <div class="featured fu f4">
+              <span class="mono">À LA UNE</span>
+              <button type="button" class="feat" data-act="p.open" data-id="edunova" aria-haspopup="dialog">EduNova</button>
+              <button type="button" class="feat" data-act="p.open" data-id="tailora" aria-haspopup="dialog">Tailora / AM Couture</button>
+              <button type="button" class="feat" data-act="p.open" data-id="joegol" aria-haspopup="dialog">JOEGOL</button>
+            </div>
+            <div class="stats fu f4">
+              <div class="stat glass"><strong class="disp">15</strong><span>dépôts publics GitHub</span></div>
+              <div class="stat glass"><strong class="disp">4</strong><span>projets présentés</span></div>
+              <div class="stat glass"><strong class="disp">2ᵉ place</strong><span>Concours TCC e-learning</span></div>
+            </div>
+          </div>
+
+          <div class="holo-wrap fu f5" role="img" aria-label="Portrait de Salim Zabeirou">
+            <div class="beam"></div>
+            <div class="holo">
+              <div class="base"></div>
+              <div class="ring r3"></div>
+              <div class="ring r1"></div>
+              <div class="ring r2"></div>
+              <div class="cph">
+                <div class="cph-ring"></div>
+                <div class="cph-in">
+                  <div class="ph-layer ph-base cph-img"><img src="assets/salim.webp" alt="" fetchpriority="high"></div>
+                  <div class="ph-layer ph-r cph-img"><img src="assets/salim.webp" alt=""></div>
+                  <div class="ph-layer ph-b cph-img"><img src="assets/salim.webp" alt=""></div>
+                  <span class="ph-holo"></span>
+                  <span class="cph-scan"></span>
+                </div>
+                <div class="ph-layer cph-img cph-pop"><img src="assets/salim.webp" alt=""></div>
+                <span class="cph-tag mono">SZ // ONLINE</span>
+              </div>
+              <div class="fchip glass mono fc1">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"></path></svg>PHP · MySQL
+              </div>
+              <div class="fchip glass mono fc2">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7z"></path><path d="M12 22V12M21 7l-9 5-9-5"></path></svg>React · Vite
+              </div>
+              <div class="fchip glass mono fc3">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"></path></svg>Node · Express
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#apropos" class="scroll-ind mono fu f5"><span class="mouse"></span>DÉFILER</a>
+    </section>
+
+    <!-- ============ À PROPOS ============ -->
+    <section id="apropos" class="sec">
+      <div class="deco deco-ring" aria-hidden="true" style="right: -120px; top: 80px; transform: translateY(calc(var(--sy,0) * -0.1px))"></div>
+      <div class="wrap rv">
+        <div class="sec-head">
+          <div class="lbl mono st d1">01 // À propos</div>
+          <h2 class="h2 disp st d2">Le code comme <span class="grad">matière créative</span>.</h2>
+        </div>
+        <div class="about-grid">
+          <div class="st d2">
+            <div class="idcard" data-tilt="">
+              <div class="idcard-in">
+                <div class="avatar">
+                  <span class="corner c-tl"></span><span class="corner c-tr"></span><span class="corner c-bl"></span><span class="corner c-br"></span>
+                  <span class="av-tag mono" style="top: 18px; left: 44px">ID // DEV-SZ</span>
+                  <span class="av-tag mono" style="bottom: 18px; right: 44px">● EN LIGNE</span>
+                  <span class="initials disp grad">SZ</span>
+                </div>
+                <div class="id-meta mono">
+                  <div><span>NOM</span><b>Salim Zabeirou</b></div>
+                  <div><span>TITRE</span><b>Dév. Web Junior Full-Stack</b></div>
+                  <div><span>BASE</span><b>Niger</b></div>
+                  <div><span>FORMATION</span><b style="color: #3dffb0">Génie Logiciel</b></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about-txt">
+            <p class="st d3">J'étudie le <strong>Génie Logiciel (Informatique et Gestion)</strong> et je développe des solutions Web, avec un intérêt particulier pour les <strong>plateformes SaaS</strong>, les <strong>applications de gestion</strong> et la <strong>digitalisation des entreprises</strong>.</p>
+            <p class="st d4">La pratique occupe une place importante dans mon parcours : un stage de développeur Web junior chez <strong>JOEGOL</strong>, et des projets comme <strong>EduNova</strong> et <strong>Tailora</strong>, en cours de développement. J'aime partir d'un besoin réel et avancer de l'interface jusqu'au backend et au déploiement.</p>
+            <div class="pills st d5">
+              <span class="pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Niger</span>
+              <span class="pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"></path><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"></path></svg>Génie Logiciel – IG</span>
+              <span class="pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"></path></svg>SaaS &amp; applications de gestion</span>
+            </div>
+            <div class="counters st d6">
+              <div class="counter glass"><strong class="disp grad" data-count="15" data-suf="">15</strong><span>dépôts GitHub</span></div>
+              <div class="counter glass"><strong class="disp grad" data-count="4" data-suf="">4</strong><span>projets présentés</span></div>
+              <div class="counter glass"><strong class="disp grad" data-count="2" data-suf="ᵉ">2ᵉ</strong><span>place Concours TCC</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COMPÉTENCES ============ -->
+    <section id="competences" class="sec">
+      <div class="deco deco-cube" aria-hidden="true" style="left: 4%; top: 120px; transform: translateY(calc(var(--sy,0) * -0.14px)) rotate(24deg)"></div>
+      <div class="wrap rv">
+        <div class="sec-head">
+          <div class="lbl mono st d1">02 // Compétences</div>
+          <h2 class="h2 disp st d2">Un arsenal <span class="grad">technologique</span>.</h2>
+          <p class="sub st d3">Choisissez un domaine. Quand une technologie est documentée dans un projet, il est indiqué sous son nom ; les autres complètent ma boîte à outils.</p>
+        </div>
+        <div class="skills-grid">
+          <div class="st d3">
+            <div class="tabs glass" role="tablist" aria-label="Domaines de compétences">
+                <button type="button" role="tab" id="tab-front" aria-controls="panel-front" class="tab on" aria-selected="true" tabindex="0" data-act="t.pick" data-id="front">Frontend</button>
+                <button type="button" role="tab" id="tab-back" aria-controls="panel-back" class="tab" aria-selected="false" tabindex="-1" data-act="t.pick" data-id="back">Backend</button>
+                <button type="button" role="tab" id="tab-db" aria-controls="panel-db" class="tab" aria-selected="false" tabindex="-1" data-act="t.pick" data-id="db">Bases de données</button>
+                <button type="button" role="tab" id="tab-tools" aria-controls="panel-tools" class="tab" aria-selected="false" tabindex="-1" data-act="t.pick" data-id="tools">Outils &amp; environnements</button>
+                <button type="button" role="tab" id="tab-deploy" aria-controls="panel-deploy" class="tab" aria-selected="false" tabindex="-1" data-act="t.pick" data-id="deploy">Déploiement &amp; administration</button>
+            </div>
+            <div class="if-wrap" data-tabpanel="front"><div class="skt-panel glass" role="tabpanel" id="panel-front" aria-labelledby="tab-front">
+              <div class="skt-head mono"><span>MODULE // FRONTEND</span><b>6 éléments</b></div>
+              <ul class="skt-grid">
+                <li class="skt used" style="animation-delay: 0.00s"><b>HTML</b><small class="mono">Ce portfolio</small></li>
+                <li class="skt used" style="animation-delay: 0.06s"><b>CSS</b><small class="mono">Ce portfolio</small></li>
+                <li class="skt used" style="animation-delay: 0.12s"><b>JavaScript</b><small class="mono">EduNova · JOEGOL</small></li>
+                <li class="skt used" style="animation-delay: 0.18s"><b>React</b><small class="mono">Tailora</small></li>
+                <li class="skt used" style="animation-delay: 0.24s"><b>Vite</b><small class="mono">Tailora</small></li>
+                <li class="skt used" style="animation-delay: 0.30s"><b>Tailwind CSS</b><small class="mono">EduNova</small></li>
+              </ul>
+            </div></div><div class="if-wrap off" data-tabpanel="back"><div class="skt-panel glass" role="tabpanel" id="panel-back" aria-labelledby="tab-back">
+              <div class="skt-head mono"><span>MODULE // BACKEND</span><b>7 éléments</b></div>
+              <ul class="skt-grid">
+                <li class="skt used" style="animation-delay: 0.00s"><b>PHP</b><small class="mono">EduNova · JOEGOL</small></li>
+                <li class="skt used" style="animation-delay: 0.06s"><b>Node.js</b><small class="mono">Tailora · WhatFlow</small></li>
+                <li class="skt used" style="animation-delay: 0.12s"><b>Express.js</b><small class="mono">Tailora</small></li>
+                <li class="skt" style="animation-delay: 0.18s"><b>MVC</b></li>
+                <li class="skt" style="animation-delay: 0.24s"><b>API REST</b></li>
+                <li class="skt" style="animation-delay: 0.30s"><b>CRUD</b></li>
+                <li class="skt" style="animation-delay: 0.36s"><b>RBAC</b></li>
+              </ul>
+            </div></div><div class="if-wrap off" data-tabpanel="db"><div class="skt-panel glass" role="tabpanel" id="panel-db" aria-labelledby="tab-db">
+              <div class="skt-head mono"><span>MODULE // BASES DE DONNÉES</span><b>4 éléments</b></div>
+              <ul class="skt-grid">
+                <li class="skt used" style="animation-delay: 0.00s"><b>MySQL</b><small class="mono">EduNova · JOEGOL</small></li>
+                <li class="skt used" style="animation-delay: 0.06s"><b>PostgreSQL</b><small class="mono">Tailora</small></li>
+                <li class="skt used" style="animation-delay: 0.12s"><b>Prisma (ORM)</b><small class="mono">Tailora</small></li>
+                <li class="skt" style="animation-delay: 0.18s"><b>MariaDB</b></li>
+              </ul>
+            </div></div><div class="if-wrap off" data-tabpanel="tools"><div class="skt-panel glass" role="tabpanel" id="panel-tools" aria-labelledby="tab-tools">
+              <div class="skt-head mono"><span>MODULE // OUTILS &amp; ENVIRONNEMENTS</span><b>7 éléments</b></div>
+              <ul class="skt-grid">
+                <li class="skt" style="animation-delay: 0.00s"><b>Git</b></li>
+                <li class="skt used" style="animation-delay: 0.06s"><b>GitHub</b><small class="mono">Dépôts publics</small></li>
+                <li class="skt used" style="animation-delay: 0.12s"><b>WAMP</b><small class="mono">Environnement local</small></li>
+                <li class="skt" style="animation-delay: 0.18s"><b>Figma</b></li>
+                <li class="skt" style="animation-delay: 0.24s"><b>Canva</b></li>
+                <li class="skt" style="animation-delay: 0.30s"><b>Trello</b></li>
+                <li class="skt" style="animation-delay: 0.36s"><b>WordPress</b></li>
+              </ul>
+            </div></div><div class="if-wrap off" data-tabpanel="deploy"><div class="skt-panel glass" role="tabpanel" id="panel-deploy" aria-labelledby="tab-deploy">
+              <div class="skt-head mono"><span>MODULE // DÉPLOIEMENT &amp; ADMINISTRATION</span><b>5 éléments</b></div>
+              <ul class="skt-grid">
+                <li class="skt used" style="animation-delay: 0.00s"><b>Vercel</b><small class="mono">Tailora</small></li>
+                <li class="skt used" style="animation-delay: 0.06s"><b>Neon</b><small class="mono">Tailora</small></li>
+                <li class="skt" style="animation-delay: 0.12s"><b>Hostinger</b></li>
+                <li class="skt" style="animation-delay: 0.18s"><b>cPanel</b></li>
+                <li class="skt" style="animation-delay: 0.24s"><b>FTP</b></li>
+              </ul>
+            </div></div>
+          </div>
+          <div class="st d4">
+            <div class="orbit-box" aria-hidden="true">
+              <div class="orb orb-2">
+
+                  <div class="sat" style="transform: rotate(0deg) translateX(210px) rotate(0deg)"><div class="sat-in mono">PHP</div></div>
+
+                  <div class="sat" style="transform: rotate(45deg) translateX(210px) rotate(-45deg)"><div class="sat-in mono">MySQL</div></div>
+
+                  <div class="sat" style="transform: rotate(90deg) translateX(210px) rotate(-90deg)"><div class="sat-in mono">React</div></div>
+
+                  <div class="sat" style="transform: rotate(135deg) translateX(210px) rotate(-135deg)"><div class="sat-in mono">Node.js</div></div>
+
+                  <div class="sat" style="transform: rotate(180deg) translateX(210px) rotate(-180deg)"><div class="sat-in mono">PostgreSQL</div></div>
+
+                  <div class="sat" style="transform: rotate(225deg) translateX(210px) rotate(-225deg)"><div class="sat-in mono">Tailwind</div></div>
+
+                  <div class="sat" style="transform: rotate(270deg) translateX(210px) rotate(-270deg)"><div class="sat-in mono">Git</div></div>
+
+                  <div class="sat" style="transform: rotate(315deg) translateX(210px) rotate(-315deg)"><div class="sat-in mono">Vercel</div></div>
+
+              </div>
+              <div class="orb orb-1">
+
+                  <div class="sat" style="transform: rotate(0deg) translateX(125px) rotate(0deg)"><div class="sat-in mono">JavaScript</div></div>
+
+                  <div class="sat" style="transform: rotate(72deg) translateX(125px) rotate(-72deg)"><div class="sat-in mono">Express</div></div>
+
+                  <div class="sat" style="transform: rotate(144deg) translateX(125px) rotate(-144deg)"><div class="sat-in mono">API REST</div></div>
+
+                  <div class="sat" style="transform: rotate(216deg) translateX(125px) rotate(-216deg)"><div class="sat-in mono">Vite</div></div>
+
+                  <div class="sat" style="transform: rotate(288deg) translateX(125px) rotate(-288deg)"><div class="sat-in mono">Figma</div></div>
+
+              </div>
+              <div class="orb-core"><div><b class="disp">29</b><span class="mono">COMPÉTENCES</span></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="marquee st d5" aria-hidden="true">
+          <div class="mq-track">
+            <span class="mq-item mono">HTML</span>
+            <span class="mq-item mono">CSS</span>
+            <span class="mq-item mono">JavaScript</span>
+            <span class="mq-item mono">React</span>
+            <span class="mq-item mono">Vite</span>
+            <span class="mq-item mono">Tailwind CSS</span>
+            <span class="mq-item mono">PHP</span>
+            <span class="mq-item mono">Node.js</span>
+            <span class="mq-item mono">Express.js</span>
+            <span class="mq-item mono">MVC</span>
+            <span class="mq-item mono">API REST</span>
+            <span class="mq-item mono">CRUD</span>
+            <span class="mq-item mono">RBAC</span>
+            <span class="mq-item mono">MySQL</span>
+            <span class="mq-item mono">PostgreSQL</span>
+            <span class="mq-item mono">Prisma (ORM)</span>
+            <span class="mq-item mono">MariaDB</span>
+            <span class="mq-item mono">Git</span>
+            <span class="mq-item mono">GitHub</span>
+            <span class="mq-item mono">WAMP</span>
+            <span class="mq-item mono">Figma</span>
+            <span class="mq-item mono">Canva</span>
+            <span class="mq-item mono">Trello</span>
+            <span class="mq-item mono">WordPress</span>
+            <span class="mq-item mono">Vercel</span>
+            <span class="mq-item mono">Neon</span>
+            <span class="mq-item mono">Hostinger</span>
+            <span class="mq-item mono">cPanel</span>
+            <span class="mq-item mono">FTP</span>
+            <span class="mq-item mono">HTML</span>
+            <span class="mq-item mono">CSS</span>
+            <span class="mq-item mono">JavaScript</span>
+            <span class="mq-item mono">React</span>
+            <span class="mq-item mono">Vite</span>
+            <span class="mq-item mono">Tailwind CSS</span>
+            <span class="mq-item mono">PHP</span>
+            <span class="mq-item mono">Node.js</span>
+            <span class="mq-item mono">Express.js</span>
+            <span class="mq-item mono">MVC</span>
+            <span class="mq-item mono">API REST</span>
+            <span class="mq-item mono">CRUD</span>
+            <span class="mq-item mono">RBAC</span>
+            <span class="mq-item mono">MySQL</span>
+            <span class="mq-item mono">PostgreSQL</span>
+            <span class="mq-item mono">Prisma (ORM)</span>
+            <span class="mq-item mono">MariaDB</span>
+            <span class="mq-item mono">Git</span>
+            <span class="mq-item mono">GitHub</span>
+            <span class="mq-item mono">WAMP</span>
+            <span class="mq-item mono">Figma</span>
+            <span class="mq-item mono">Canva</span>
+            <span class="mq-item mono">Trello</span>
+            <span class="mq-item mono">WordPress</span>
+            <span class="mq-item mono">Vercel</span>
+            <span class="mq-item mono">Neon</span>
+            <span class="mq-item mono">Hostinger</span>
+            <span class="mq-item mono">cPanel</span>
+            <span class="mq-item mono">FTP</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJETS ============ -->
+    <section id="projets" class="sec">
+      <div class="deco deco-ring" aria-hidden="true" style="left: -160px; top: 300px; width: 420px; height: 420px; transform: translateY(calc(var(--sy,0) * -0.08px))"></div>
+      <div class="wrap rv">
+        <div class="sec-head">
+          <div class="lbl mono st d1">03 // Projets</div>
+          <h2 class="h2 disp st d2">Réalisations <span class="grad">sélectionnées</span>.</h2>
+          <p class="sub st d3">Ouvrez un projet pour découvrir son contexte, ses fonctionnalités et mon rôle.</p>
+        </div>
+        <div class="filters st d3" role="group" aria-label="Filtrer les projets">
+
+            <button type="button" class="flt on" aria-pressed="true" data-act="f.pick" data-id="all">Tous</button>
+
+            <button type="button" class="flt" aria-pressed="false" data-act="f.pick" data-id="saas">SaaS</button>
+
+            <button type="button" class="flt" aria-pressed="false" data-act="f.pick" data-id="gestion">Gestion &amp; facturation</button>
+
+            <button type="button" class="flt" aria-pressed="false" data-act="f.pick" data-id="com">Communication</button>
+
+        </div>
+        <div class="pgrid st d4">
+          <article class="pcard glass featured-card" style="animation-delay: 0.00s" data-tilt data-cats="saas gestion">
+              <button type="button" class="pvis" style="background: radial-gradient(circle at 30% 30%, var(--c) 0%, rgba(var(--br),.55) 45%, #07070d 100%)" aria-label="Ouvrir le projet EDUNOVA" aria-haspopup="dialog" data-act="p.open" data-id="edunova">
+                <span class="pyear mono">2026 — EN COURS</span><span class="pstatus mono">● EN COURS</span>
+                <span class="pglyph"><span class="plogo"><img src="assets/edunova.jpg" alt="Logo EduNova" width="440" height="440" loading="lazy" decoding="async"></span></span>
+              </button>
+              <div class="pbody">
+                <div class="ptags"><span class="ptag mono">SaaS</span><span class="ptag mono">Gestion scolaire</span></div>
+                <h3 class="ptitle disp">EDUNOVA</h3>
+                <p class="pdesc">Plateforme de gestion scolaire SaaS destinée aux établissements privés.</p>
+                <p class="prole"><span class="mono">RÔLE</span> Concepteur et développeur Full-Stack</p>
+                <div class="pfoot">
+                  <span class="ptech mono">PHP · MySQL · Tailwind</span>
+                  <button type="button" class="pgo" aria-haspopup="dialog" aria-label="Explorer le projet EDUNOVA" data-act="p.open" data-id="edunova">Explorer <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+                </div>
+              </div>
+            </article>
+          <article class="pcard glass featured-card" style="animation-delay: 0.08s" data-tilt data-cats="saas gestion">
+              <button type="button" class="pvis" style="background: radial-gradient(circle at 70% 30%, var(--v) 0%, rgba(var(--br),.5) 45%, #07070d 100%)" aria-label="Ouvrir le projet TAILORA — AM COUTURE" aria-haspopup="dialog" data-act="p.open" data-id="tailora">
+                <span class="pyear mono">2026 — EN COURS</span><span class="pstatus mono">● EN COURS</span>
+                <img class="pshot" src="assets/tailora.jpg" alt="Tableau de bord de supervision TAILORA" loading="lazy" decoding="async"><span class="ptint"></span>
+              </button>
+              <div class="pbody">
+                <div class="ptags"><span class="ptag mono">SaaS</span><span class="ptag mono">Atelier de couture</span></div>
+                <h3 class="ptitle disp">TAILORA — AM COUTURE</h3>
+                <p class="pdesc">Solution numérique de gestion pour les ateliers de couture.</p>
+                <p class="prole"><span class="mono">RÔLE</span> Concepteur et développeur Full-Stack</p>
+                <div class="pfoot">
+                  <span class="ptech mono">React · Express · Prisma</span>
+                  <button type="button" class="pgo" aria-haspopup="dialog" aria-label="Explorer le projet TAILORA — AM COUTURE" data-act="p.open" data-id="tailora">Explorer <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+                </div>
+              </div>
+            </article>
+          <article class="pcard glass featured-card" style="animation-delay: 0.16s" data-tilt data-cats="gestion">
+              <button type="button" class="pvis" style="background: radial-gradient(circle at 60% 60%, var(--c) 0%, rgba(var(--vr),.45) 45%, #07070d 100%)" aria-label="Ouvrir le projet JOEGOL FACTURATION" aria-haspopup="dialog" data-act="p.open" data-id="joegol">
+                <span class="pyear mono">2025 — 2026</span>
+                <span class="pglyph"><span class="plogo"><img src="assets/joegol.jpg" alt="Logo JOEGOL" width="440" height="440" loading="lazy" decoding="async"></span></span>
+              </button>
+              <div class="pbody">
+                <div class="ptags"><span class="ptag mono">Facturation</span><span class="ptag mono">Devis</span></div>
+                <h3 class="ptitle disp">JOEGOL FACTURATION</h3>
+                <p class="pdesc">Participation au développement d’une solution de devis et de facturation.</p>
+                <p class="prole"><span class="mono">RÔLE</span> Développeur Web Junior — Stage</p>
+                <div class="pfoot">
+                  <span class="ptech mono">PHP · JavaScript · MySQL</span>
+                  <button type="button" class="pgo" aria-haspopup="dialog" aria-label="Explorer le projet JOEGOL FACTURATION" data-act="p.open" data-id="joegol">Explorer <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+                </div>
+              </div>
+            </article>
+          <article class="pcard glass" style="animation-delay: 0.24s" data-tilt data-cats="com">
+              <button type="button" class="pvis" style="background: radial-gradient(circle at 40% 70%, var(--b) 0%, rgba(var(--vr),.35) 45%, #07070d 100%)" aria-label="Ouvrir le projet WHATFLOW" aria-haspopup="dialog" data-act="p.open" data-id="whatflow">
+
+                <span class="pglyph"><span class="pglyph-i"><svg width="84" height="84" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.6 7.4L3 20.5l1.6-5.2A8.5 8.5 0 1121 11.5z"></path><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"></path></svg></span></span>
+              </button>
+              <div class="pbody">
+                <div class="ptags"><span class="ptag mono">Communication</span><span class="ptag mono">WhatsApp</span></div>
+                <h3 class="ptitle disp">WHATFLOW</h3>
+                <p class="pdesc">Projet d’outil de gestion de communication intégrant WhatsApp.</p>
+                <p class="prole"><span class="mono">RÔLE</span> Concepteur et développeur</p>
+                <div class="pfoot">
+                  <span class="ptech mono">Node.js · whatsapp-web.js</span>
+                  <button type="button" class="pgo" aria-haspopup="dialog" aria-label="Explorer le projet WHATFLOW" data-act="p.open" data-id="whatflow">Explorer <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+                </div>
+              </div>
+            </article>
+        </div>
+        <p class="sr-only" role="status" id="flt-status"></p>
+        <div class="gh glass st d5">
+          <div class="gh-head">
+            <div>
+              <div class="lbl mono">GitHub // SALIM-007-MAKER</div>
+              <h3 class="disp" style="font-size: 26px; margin: 10px 0 0; color: #fff">15 dépôts publics — et d'autres expérimentations</h3>
+            </div>
+            <a href="https://github.com/SALIM-007-MAKER?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn btn-g btn-sm">Voir tout sur GitHub
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"></path></svg>
+            </a>
+          </div>
+          <div class="gh-grid">
+
+              <a class="repo" href="https://github.com/SALIM-007-MAKER/Ecole_app" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5a2 2 0 012-2h13v15H6a2 2 0 00-2 2zM4 19a2 2 0 002 2h13v-3"></path></svg>
+                <span class="repo-name mono">Ecole_app</span>
+                <span class="repo-lang mono">PHP</span>
+              </a>
+
+              <a class="repo" href="https://github.com/SALIM-007-MAKER/WhatFlow" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5a2 2 0 012-2h13v15H6a2 2 0 00-2 2zM4 19a2 2 0 002 2h13v-3"></path></svg>
+                <span class="repo-name mono">WhatFlow</span>
+                <span class="repo-lang mono">HTML</span>
+              </a>
+
+              <a class="repo" href="https://github.com/SALIM-007-MAKER/PharmaLink" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5a2 2 0 012-2h13v15H6a2 2 0 00-2 2zM4 19a2 2 0 002 2h13v-3"></path></svg>
+                <span class="repo-name mono">PharmaLink</span>
+
+              </a>
+
+              <a class="repo" href="https://github.com/SALIM-007-MAKER/Weiirdoo_formation_startup" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5a2 2 0 012-2h13v15H6a2 2 0 00-2 2zM4 19a2 2 0 002 2h13v-3"></path></svg>
+                <span class="repo-name mono">Weiirdoo_formation_startup</span>
+                <span class="repo-lang mono">PHP</span>
+              </a>
+
+              <a class="repo" href="https://github.com/SALIM-007-MAKER/ObitoProjet" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5a2 2 0 012-2h13v15H6a2 2 0 00-2 2zM4 19a2 2 0 002 2h13v-3"></path></svg>
+                <span class="repo-name mono">ObitoProjet</span>
+
+              </a>
+
+              <a class="repo" href="https://github.com/SALIM-007-MAKER/Whatspro" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5a2 2 0 012-2h13v15H6a2 2 0 00-2 2zM4 19a2 2 0 002 2h13v-3"></path></svg>
+                <span class="repo-name mono">Whatspro</span>
+                <span class="repo-lang mono">PHP</span>
+              </a>
+
+              <a class="repo" href="https://github.com/SALIM-007-MAKER/Facturation" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5a2 2 0 012-2h13v15H6a2 2 0 00-2 2zM4 19a2 2 0 002 2h13v-3"></path></svg>
+                <span class="repo-name mono">Facturation</span>
+                <span class="repo-lang mono">PHP</span>
+              </a>
+
+              <a class="repo" href="https://github.com/SALIM-007-MAKER/SAHELFOOD" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5a2 2 0 012-2h13v15H6a2 2 0 00-2 2zM4 19a2 2 0 002 2h13v-3"></path></svg>
+                <span class="repo-name mono">SAHELFOOD</span>
+
+              </a>
+
+              <a class="repo" href="https://github.com/SALIM-007-MAKER/mon_portfolio" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5a2 2 0 012-2h13v15H6a2 2 0 00-2 2zM4 19a2 2 0 002 2h13v-3"></path></svg>
+                <span class="repo-name mono">mon_portfolio</span>
+                <span class="repo-lang mono">JavaScript</span>
+              </a>
+
+              <a class="repo" href="https://github.com/SALIM-007-MAKER/Restaurant_ionic" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5a2 2 0 012-2h13v15H6a2 2 0 00-2 2zM4 19a2 2 0 002 2h13v-3"></path></svg>
+                <span class="repo-name mono">Restaurant_ionic</span>
+
+              </a>
+
+              <a class="repo" href="https://github.com/SALIM-007-MAKER/Pointage" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5a2 2 0 012-2h13v15H6a2 2 0 00-2 2zM4 19a2 2 0 002 2h13v-3"></path></svg>
+                <span class="repo-name mono">Pointage</span>
+                <span class="repo-lang mono">PHP</span>
+              </a>
+
+              <a class="repo" href="https://github.com/SALIM-007-MAKER/restau" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5a2 2 0 012-2h13v15H6a2 2 0 00-2 2zM4 19a2 2 0 002 2h13v-3"></path></svg>
+                <span class="repo-name mono">restau</span>
+                <span class="repo-lang mono">JavaScript</span>
+              </a>
+
+              <a class="repo" href="https://github.com/SALIM-007-MAKER/Joegol-web" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5a2 2 0 012-2h13v15H6a2 2 0 00-2 2zM4 19a2 2 0 002 2h13v-3"></path></svg>
+                <span class="repo-name mono">Joegol-web</span>
+                <span class="repo-lang mono">PHP</span>
+              </a>
+
+              <a class="repo" href="https://github.com/SALIM-007-MAKER/Nouvelle-Ecole" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5a2 2 0 012-2h13v15H6a2 2 0 00-2 2zM4 19a2 2 0 002 2h13v-3"></path></svg>
+                <span class="repo-name mono">Nouvelle-Ecole</span>
+                <span class="repo-lang mono">CSS</span>
+              </a>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PARCOURS ============ -->
+    <section id="parcours" class="sec">
+      <div class="wrap rv">
+        <div class="sec-head">
+          <div class="lbl mono st d1">04 // Parcours</div>
+          <h2 class="h2 disp st d2">Expériences &amp; <span class="grad">formations</span>.</h2>
+        </div>
+        <div class="tl-grid">
+          <div class="tl-col glass st d3">
+            <div class="tl-head">
+              <span class="tl-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2M3 13h18"></path></svg></span>
+              <h3 class="disp">Expériences</h3>
+            </div>
+            <div class="tl">
+
+                <div class="tl-item">
+                  <div class="tl-date mono">2025 — 2026</div>
+                  <h4 class="disp">Développeur Web Junior — Stage</h4>
+                  <div class="tl-org">JOEGOL</div>
+                  <p>Développement Web avec PHP, JavaScript et MySQL, participation à la réalisation de fonctionnalités de facturation et gestion de l’hébergement.</p>
+                </div>
+
+                <div class="tl-item">
+                  <div class="tl-date mono">2023 · 8 MOIS</div>
+                  <h4 class="disp">Agent de voyage / Convoyeur</h4>
+                  <div class="tl-org">SONITRAV</div>
+                  <p>Accompagnement des voyageurs et organisation des déplacements.</p>
+                </div>
+
+                <div class="tl-item">
+                  <div class="tl-date mono">2019 — 2020</div>
+                  <h4 class="disp">Engagement bénévole</h4>
+                  <div class="tl-org">Scouts du Niger</div>
+                  <p>Participation aux actions communautaires durant la période COVID-19.</p>
+                </div>
+
+            </div>
+          </div>
+          <div class="tl-col glass st d4">
+            <div class="tl-head">
+              <span class="tl-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"></path><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5M22 9v6"></path></svg></span>
+              <h3 class="disp">Formations</h3>
+            </div>
+            <div class="tl">
+
+                <div class="tl-item">
+                  <div class="tl-date mono">2026 — EN COURS</div>
+                  <h4 class="disp">Génie Logiciel</h4>
+                  <div class="tl-org">Informatique et Gestion (IG)</div>
+                  <p>Cursus en génie logiciel orienté informatique et gestion.</p>
+                </div>
+
+                <div class="tl-item">
+                  <div class="tl-date mono">2022</div>
+                  <h4 class="disp">Baccalauréat scientifique — série D</h4>
+                </div>
+
+                <div class="tl-item">
+                  <div class="tl-date mono">2017</div>
+                  <h4 class="disp">BEPC</h4>
+                </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="award glass st d5">
+          <span class="award-ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 01-10 0z"></path><path d="M17 5h3v2a3 3 0 01-3 3M7 5H4v2a3 3 0 003 3"></path></svg></span>
+          <div>
+            <div class="tl-date mono">DISTINCTION · 2023 — 2024</div>
+            <h4 class="disp">Concours TCC e-learning — 2ᵉ place</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="sec">
+      <div class="deco deco-cube" aria-hidden="true" style="right: 6%; top: 140px; width: 160px; height: 160px; transform: translateY(calc(var(--sy,0) * -0.1px)) rotate(-18deg)"></div>
+      <div class="wrap rv">
+        <div class="contact-grid">
+          <div>
+            <div class="lbl mono st d1">05 // Contact</div>
+            <h2 class="h2 disp st d2">Construisons le <span class="grad">futur</span> ensemble.</h2>
+            <p class="sub st d3">Une idée de plateforme, un besoin de digitalisation, une opportunité ? Envoyez-moi un signal.</p>
+            <div class="cinfo">
+              <div class="ccard glass st d3" data-contact="email" hidden>
+                <span class="tl-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></span>
+                <div><span>E-MAIL</span><a class="mono" data-link></a></div>
+              </div>
+              <div class="ccard glass st d4">
+                <span class="tl-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span>
+                <div><span>LOCALISATION</span><b>Niger</b></div>
+              </div>
+              <div class="ccard glass st d5" data-contact="availability" hidden>
+                <span class="tl-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span>
+                <div><span>DISPONIBILITÉ</span><b data-text></b></div>
+              </div>
+            </div>
+            <div class="socials st d6">
+              <a class="soc" href="https://github.com/SALIM-007-MAKER" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"></path></svg>GitHub</a>
+              <a class="soc soc-wa" data-contact="whatsapp" target="_blank" rel="noopener noreferrer" hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.6 7.4L3 20.5l1.6-5.2A8.5 8.5 0 1121 11.5z"></path><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"></path></svg>WhatsApp</a>
+              <a class="soc" data-contact="linkedin" target="_blank" rel="noopener noreferrer" hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 014 0v4M12 10v7"></path></svg>LinkedIn</a>
+              <a class="soc" data-cv hidden download><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"></path></svg>Télécharger mon CV (PDF)</a>
+            </div>
+          </div>
+
+          <div class="form glass st d3">
+            <div class="term mono"><span class="live"></span><b>formulaire</b> // contact</div>
+            <p class="form-off" id="form-off" hidden></p>
+            <div class="if-wrap" data-if="notSent">
+              <form id="contact-form" novalidate>
+                <div class="frow">
+                  <div class="field"><label for="f-nom">Nom</label><input id="f-nom" name="nom" class="inp" type="text" placeholder="Votre nom" autocomplete="name" maxlength="80" required aria-describedby="e-nom"><span class="ferr" id="e-nom"></span></div>
+                  <div class="field"><label for="f-mail">E-mail</label><input id="f-mail" name="email" class="inp" type="email" placeholder="vous@exemple.com" autocomplete="email" maxlength="150" required aria-describedby="e-email"><span class="ferr" id="e-email"></span></div>
+                </div>
+                <div class="field"><label for="f-sujet">Sujet</label>
+                  <select id="f-sujet" name="sujet" class="inp">
+                    <option>Projet freelance</option>
+                    <option>Proposition de poste</option>
+                    <option>Collaboration</option>
+                    <option>Autre</option>
+                  </select>
+                </div>
+                <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" class="inp" placeholder="Parlez-moi de votre projet…" maxlength="3000" required aria-describedby="e-message"></textarea><span class="ferr" id="e-message"></span></div>
+                <div class="hp" aria-hidden="true"><label for="f-web">Ne pas remplir</label><input id="f-web" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+                <p class="err" role="alert" id="form-err"></p>
+                <button type="submit" class="btn btn-p" id="form-btn" style="width: 100%"><span>Envoyer le signal</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"></path></svg>
+                </button>
+              </form>
+            </div>
+            <div class="if-wrap off" data-if="sent">
+              <div class="ok" role="status">
+                <div class="ok-ico"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg></div>
+                <h3 class="disp ok-title" tabindex="-1">Message envoyé, <span id="sent-name"></span> !</h3>
+                <p>Merci pour votre message.</p>
+                <button type="button" class="btn btn-g" data-act="resetForm">Envoyer un autre message</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-in mono">
+      <span>© <span id="year">2026</span> Salim Zabeirou — Développeur Web Junior Full-Stack</span>
+      <button type="button" class="soc" id="motion-toggle"></button>
+      <a href="#accueil" class="soc">Retour en haut
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"></path></svg>
+      </a>
+    </div>
+  </footer>
+
+  <!-- project modal -->
+  <div class="if-wrap off" data-modal="edunova">
+    <div class="modal" data-act="closeModal">
+      <div class="mpanel glass" role="dialog" aria-modal="true" aria-labelledby="m-edunova">
+        <button type="button" class="mclose" aria-label="Fermer la fenêtre" data-act="closeModal"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+        <div class="mvis" style="background: radial-gradient(circle at 30% 30%, var(--c) 0%, rgba(var(--br),.55) 45%, #07070d 100%)">
+          <span class="pglyph"><span class="plogo"><img src="assets/edunova.jpg" alt="" width="440" height="440" loading="lazy" decoding="async"></span></span>
+          <span class="pyear mono">2026 — EN COURS · Concepteur et développeur Full-Stack</span>
+        </div>
+        <div class="mbody">
+          <div class="ptags"><span class="ptag mono">SaaS</span><span class="ptag mono">Gestion scolaire</span></div>
+          <h3 class="disp mtitle" id="m-edunova">EDUNOVA</h3>
+          <div class="mgrid">
+            <div class="mblock"><h4 class="lbl mono">Contexte</h4><p>Une plateforme SaaS pensée pour les établissements scolaires privés.</p></div>
+            <div class="mblock"><h4 class="lbl mono">Problème adressé</h4><p>Réunir dans un même outil le suivi des élèves, la vie scolaire et les finances.</p></div>
+            <div class="mblock"><h4 class="lbl mono">Solution développée</h4><p>Une application Web de gestion scolaire, avec un espace dédié aux parents.</p></div>
+            <div class="mblock"><h4 class="lbl mono">Mon rôle</h4><p>Concepteur et développeur Full-Stack.</p></div>
+            <div class="mblock"><h4 class="lbl mono">Fonctionnalités</h4><ul class="mlist"><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Gestion des élèves</li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Notes et bulletins</li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Absences et emplois du temps</li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Finances</li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Espace parents</li></ul></div>
+            <div class="mblock"><h4 class="lbl mono">Technologies</h4><div class="pills"><span class="pill mono">PHP</span><span class="pill mono">MySQL</span><span class="pill mono">JavaScript</span><span class="pill mono">Tailwind CSS</span><span class="pill mono">TCPDF</span><span class="pill mono">Chart.js</span><span class="pill mono">PWA</span></div></div>
+          </div>
+          <div class="cta-row mlinks"><a href="https://obito.weiirdoo.com/" target="_blank" rel="noopener noreferrer" class="btn btn-p btn-sm">Visiter le site <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"></path></svg></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="if-wrap off" data-modal="tailora">
+    <div class="modal" data-act="closeModal">
+      <div class="mpanel glass" role="dialog" aria-modal="true" aria-labelledby="m-tailora">
+        <button type="button" class="mclose" aria-label="Fermer la fenêtre" data-act="closeModal"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+        <div class="mvis" style="background: radial-gradient(circle at 70% 30%, var(--v) 0%, rgba(var(--br),.5) 45%, #07070d 100%)">
+          <img class="pshot" src="assets/tailora.jpg" alt="" loading="lazy" decoding="async"><span class="ptint"></span>
+          <span class="pyear mono">2026 — EN COURS · Concepteur et développeur Full-Stack</span>
+        </div>
+        <div class="mbody">
+          <div class="ptags"><span class="ptag mono">SaaS</span><span class="ptag mono">Atelier de couture</span></div>
+          <h3 class="disp mtitle" id="m-tailora">TAILORA — AM COUTURE</h3>
+          <div class="mgrid">
+            <div class="mblock"><h4 class="lbl mono">Contexte</h4><p>Une solution numérique destinée aux ateliers de couture.</p></div>
+            <div class="mblock"><h4 class="lbl mono">Problème adressé</h4><p>Moderniser la gestion des ateliers et faciliter le suivi de leurs activités.</p></div>
+            <div class="mblock"><h4 class="lbl mono">Solution développée</h4><p>Une application Web avec une interface React / Vite et une API Express.js reliée à la base de données par Prisma.</p></div>
+            <div class="mblock"><h4 class="lbl mono">Mon rôle</h4><p>Concepteur et développeur Full-Stack.</p></div>
+            <div class="mblock"><h4 class="lbl mono">Fonctionnalités</h4><ul class="mlist"><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Vue d’ensemble de la plateforme</li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Suivi des ateliers actifs et suspendus</li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Indicateurs : comptes admin, clientes et commandes</li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Tendances sur 6 mois : nouveaux ateliers et revenus</li></ul></div>
+            <div class="mblock"><h4 class="lbl mono">Technologies</h4><div class="pills"><span class="pill mono">React</span><span class="pill mono">Vite</span><span class="pill mono">Express.js</span><span class="pill mono">Prisma</span><span class="pill mono">PostgreSQL</span><span class="pill mono">Neon</span><span class="pill mono">Vercel</span></div></div>
+          </div>
+          <figure class="mshot"><a href="assets/tailora.jpg" target="_blank" rel="noopener"><img src="assets/tailora.jpg" alt="Capture du tableau de bord TAILORA : totaux des ateliers, comptes, clientes, commandes et tendances" loading="lazy" decoding="async"></a><figcaption>Tableau de bord de supervision (données de test). Cliquez pour l’agrandir.</figcaption></figure>
+          <div class="cta-row mlinks"><a href="https://github.com/SALIM-007-MAKER/AM-Couture" target="_blank" rel="noopener noreferrer" class="btn btn-g btn-sm">Voir sur GitHub <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"></path></svg></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="if-wrap off" data-modal="joegol">
+    <div class="modal" data-act="closeModal">
+      <div class="mpanel glass" role="dialog" aria-modal="true" aria-labelledby="m-joegol">
+        <button type="button" class="mclose" aria-label="Fermer la fenêtre" data-act="closeModal"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+        <div class="mvis" style="background: radial-gradient(circle at 60% 60%, var(--c) 0%, rgba(var(--vr),.45) 45%, #07070d 100%)">
+          <span class="pglyph"><span class="plogo"><img src="assets/joegol.jpg" alt="" width="440" height="440" loading="lazy" decoding="async"></span></span>
+          <span class="pyear mono">2025 — 2026 · Développeur Web Junior — Stage</span>
+        </div>
+        <div class="mbody">
+          <div class="ptags"><span class="ptag mono">Facturation</span><span class="ptag mono">Devis</span></div>
+          <h3 class="disp mtitle" id="m-joegol">JOEGOL FACTURATION</h3>
+          <div class="mgrid">
+            <div class="mblock"><h4 class="lbl mono">Contexte</h4><p>Projet auquel j’ai participé pendant mon stage chez JOEGOL.</p></div>
+            <div class="mblock"><h4 class="lbl mono">Problème adressé</h4><p>Gérer les devis et la facturation avec un outil Web.</p></div>
+            <div class="mblock"><h4 class="lbl mono">Solution développée</h4><p>Une solution de gestion de devis et de facturation, au développement de laquelle j’ai contribué.</p></div>
+            <div class="mblock"><h4 class="lbl mono">Mon rôle</h4><p>Développeur Web Junior — Stage. Développement Web, participation aux fonctionnalités de facturation et gestion de l’hébergement.</p></div>
+            <div class="mblock"><h4 class="lbl mono">Fonctionnalités</h4><ul class="mlist"><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Gestion des devis</li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Fonctionnalités de facturation</li></ul></div>
+            <div class="mblock"><h4 class="lbl mono">Technologies</h4><div class="pills"><span class="pill mono">PHP</span><span class="pill mono">JavaScript</span><span class="pill mono">MySQL</span></div></div>
+          </div>
+          <div class="cta-row mlinks"><a href="https://devis.joegol.com/" target="_blank" rel="noopener noreferrer" class="btn btn-p btn-sm">Visiter le site <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"></path></svg></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="if-wrap off" data-modal="whatflow">
+    <div class="modal" data-act="closeModal">
+      <div class="mpanel glass" role="dialog" aria-modal="true" aria-labelledby="m-whatflow">
+        <button type="button" class="mclose" aria-label="Fermer la fenêtre" data-act="closeModal"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+        <div class="mvis" style="background: radial-gradient(circle at 40% 70%, var(--b) 0%, rgba(var(--vr),.35) 45%, #07070d 100%)">
+          <span class="pglyph"><span class="pglyph-i"><svg width="96" height="96" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.6 7.4L3 20.5l1.6-5.2A8.5 8.5 0 1121 11.5z"></path><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"></path></svg></span></span>
+          <span class="pyear mono">Concepteur et développeur</span>
+        </div>
+        <div class="mbody">
+          <div class="ptags"><span class="ptag mono">Communication</span><span class="ptag mono">WhatsApp</span></div>
+          <h3 class="disp mtitle" id="m-whatflow">WHATFLOW</h3>
+          <div class="mgrid">
+            <div class="mblock"><h4 class="lbl mono">Contexte</h4><p>Projet d’outil de gestion de communication intégrant WhatsApp.</p></div>
+            <div class="mblock"><h4 class="lbl mono">Mon rôle</h4><p>Concepteur et développeur.</p></div>
+            <div class="mblock"><h4 class="lbl mono">Fonctionnalités</h4><ul class="mlist"><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Gestion de la communication via WhatsApp</li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Intégration avec whatsapp-web.js</li></ul></div>
+            <div class="mblock"><h4 class="lbl mono">Technologies</h4><div class="pills"><span class="pill mono">PHP</span><span class="pill mono">JavaScript</span><span class="pill mono">Node.js</span><span class="pill mono">whatsapp-web.js</span></div></div>
+          </div>
+          <div class="cta-row mlinks"><a href="https://github.com/SALIM-007-MAKER/WhatFlow" target="_blank" rel="noopener noreferrer" class="btn btn-g btn-sm">Voir sur GitHub <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"></path></svg></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- custom cursor -->
+  <div class="if-wrap off" data-if="showCursor">
+    <div id="pf-ring" class="cur-ring" aria-hidden="true"></div>
+    <div id="pf-dot" class="cur-dot" aria-hidden="true"></div>
+  </div>
+</div>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

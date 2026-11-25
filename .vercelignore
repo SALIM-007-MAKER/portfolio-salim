@@ -1,0 +1,14 @@
+# Fichiers à ne pas envoyer à Vercel.
+# PHP n'est pas exécuté ici : son code (et les adresses configurées) pourrait être servi en clair.
+*.php
+
+# Fichiers propres au local ou à la documentation
+.htaccess
+.gitignore
+README.md
+
+# Précautions
+.env*
+*.log
+*.sql
+*.zip
