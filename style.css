@@ -674,7 +674,9 @@ button.soc{border:0;font-family:inherit}
 
   /* effets en boucle et mélanges d'images coûteux */
   .ph-r,.ph-b,.ph-holo,.cph-scan,.cph-pop,.deco{display:none !important}
-  .idcard::before,.avatar::after,.cph-in,.cph-ring,.fchip,.logo-mark,.lm-ring,.nav::before,.nav-cta::after,.logo-txt::before,.logo-txt::after{animation:none !important}
+  /* étape 1 réactivée : contour de la photo, icône du logo, petites bulles */
+  .cph-ring{filter:none}
+  .idcard::before,.avatar::after,.cph-in,.nav::before,.nav-cta::after,.logo-txt::before,.logo-txt::after{animation:none !important}
   .idcard::before{inset:0;opacity:.45}
   .marquee{display:none}
 }
