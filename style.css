@@ -550,3 +550,92 @@ html.reduce-motion .mq-item:nth-child(n+30){display:none}
 button.soc{border:0;font-family:inherit}
 @media (max-width:600px){.hero{padding-top:104px}}
 .ccard .tl-ico{display:grid;flex:none;color:var(--c)}
+
+/* ============ Mise en page téléphone ============ */
+@media (max-width:600px){
+  /* en-tête : le nom du logo reste visible */
+  .logo-txt-w{display:inline-block}
+  .logo-txt{font-size:17px}
+
+  /* accueil : photo et boutons remontés */
+  .hero{min-height:0;padding:96px 18px 56px}
+  .hero-grid{display:flex;flex-direction:column;align-items:stretch;gap:0}
+  .hero-txt{display:contents}
+  .kicker{order:1;align-self:flex-start}
+  .name{order:2;margin:14px 0 6px;font-size:clamp(40px,12.4vw,56px)}
+  .pf .role{order:3;line-height:1.3}
+  .spec{order:4}
+  .holo-wrap{order:5;position:relative;display:block;width:100%;height:290px;margin:6px 0 10px}
+  .holo{position:absolute;left:50%;top:50%;margin:-200px 0 0 -200px;scale:.62}
+  .fchip{font-size:15px}
+  .beam{display:none}
+  .cta-row{order:6}
+  .hero .cta-row{gap:10px}
+  .lead{order:7;margin:22px 0 0;font-size:16px}
+  .featured{order:8;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:22px}
+  .featured>span{grid-column:1/-1}
+  .featured .feat:nth-of-type(3){grid-column:1/-1}
+  .stats{order:9;margin-top:16px}
+
+  .sec{padding:72px 18px}
+  .sec-head{margin-bottom:32px}
+  .sub{font-size:16px}
+
+  /* à propos : carte et compteurs compacts */
+  .about-grid{gap:28px}
+  .idcard-in{padding:14px}
+  .avatar{aspect-ratio:16/9}
+  .initials{font-size:84px}
+  .pf .av-tag.mono:nth-of-type(n){left:auto}
+  .id-meta{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}
+  .id-meta div{padding:9px 10px}
+  .about-txt p{font-size:16px}
+  .pills{margin:20px 0}
+  .counters{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .counter{padding:14px 10px}
+  .counter strong{font-size:28px}
+  .counter span{display:block;margin-top:4px;font-size:12px;line-height:1.35}
+
+  /* compétences : onglets alignés, orbite décorative retirée */
+  .tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;border-radius:20px;margin-bottom:18px}
+  .tab{padding:6px 8px;font-size:13px;line-height:1.3;border-radius:14px}
+  .tab:last-child{grid-column:1/-1}
+  .skills-grid{gap:0}
+  .skills-grid>div:nth-child(2){display:none}
+  .marquee{margin-top:28px}
+  html.reduce-motion .marquee{display:none}
+  .skt small{font-size:11.5px}
+
+  /* projets */
+  .filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:24px}
+  .flt{padding:0 10px}
+  .pvis{height:180px}
+  .ptag{font-size:11.5px}
+
+  /* dépôts GitHub : deux colonnes */
+  .gh-head .lbl{font-size:11.5px;letter-spacing:.12em}
+  .gh-head h3{font-size:21px !important;line-height:1.3}
+  .gh-head .btn{width:100%}
+  .gh-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .repo{padding:10px;gap:8px}
+  .repo-name{font-size:12px;white-space:normal;overflow-wrap:anywhere;line-height:1.35}
+  .repo-lang,.repo svg{display:none}
+
+  .tl-col{padding:20px 16px}
+
+  /* contact : 16 px évite le zoom automatique sur iPhone */
+  .cinfo{margin-top:22px}
+  .pf .inp{font-size:16px}
+  .foot-in .soc{flex:1 1 100%;justify-content:center}
+}
+@media (max-width:359px){.logo-txt-w{display:none}.id-meta,.counters{grid-template-columns:1fr}}
+
+/* téléphone à l'horizontale */
+@media (max-height:500px) and (orientation:landscape){
+  .hero{min-height:0;padding-top:96px}
+  .modal{padding:8px}
+  .mvis{height:150px}
+}
+@media (pointer:coarse){.pf .inp{font-size:16px}}
+@media (max-width:600px){.cph-tag{display:none}}
+@media (max-width:359px){.av-tag{display:none}}
